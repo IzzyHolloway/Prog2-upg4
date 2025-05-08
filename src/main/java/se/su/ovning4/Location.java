@@ -20,4 +20,3 @@ public class Location implements Node{
         return name + " [" + x + ", " + y + "]";
     }
 }
-//hej
