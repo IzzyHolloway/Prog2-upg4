@@ -92,11 +92,13 @@ public class ListGraph<T> implements Graph<T> {
     }
 
     @Override
-    public Collection<se.su.inlupp.Edge<T>> getEdgesFrom(T node) {
-        if (!adjacencyList.containsKey(node))
-            throw new NoSuchElementException("Noden finns ej i grafen");
-        return new HashSet<>(adjacencyList.get(node));
+    public Collection<Edge<T>> getEdgesFrom(T node) {
+        if (!adjacencyList.containsKey(node)) {
+            throw new NoSuchElementException("Noden finns inte i grafen.");
+        }
+        return new ArrayList<>(adjacencyList.get(node));
     }
+
 
     @Override
     public se.su.inlupp.Edge<T> getEdgeBetween(T node1, T node2) {
